@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Galería de Co-Creaciones</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & Caveat (for signature) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilo personalizado para usar la fuente Inter y mejorar la estética */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Efecto de gradiente animado para el fondo */
+        .gradient-bg {
+            background: linear-gradient(-45deg, #111827, #1f2937, #374151, #4b5563);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Animación para la aparición de los elementos */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        /* Estilos para las tarjetas de proyecto */
+        .project-card {
+            background-color: rgba(31, 41, 55, 0.7); /* bg-gray-800 con transparencia */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(75, 85, 99, 0.5); /* border-gray-700 con transparencia */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #ffffff; /* Asegura que el texto dentro de la tarjeta sea blanco por defecto */
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card h2, .project-card h3 {
+            color: #ffffff; /* Títulos siempre blancos dentro de la tarjeta */
+        }
+
+        .project-card p {
+            color: #d1d5db; /* Texto gris claro dentro de la tarjeta */
+        }
+
+        .project-card a {
+            /* Estilos para los botones de la tarjeta */
+            display: inline-block;
+            font-weight: 600; /* font-semibold */
+            padding: 8px 20px; /* py-2 px-5 */
+            border-radius: 8px; /* rounded-lg */
+            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .project-card .deep-dive-btn {
+            background: linear-gradient(to right, var(--tw-gradient-stops));
+            color: white;
+        }
+        .project-card .deep-dive-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card .pdf-btn {
+            border: 1px solid rgba(75, 85, 99, 0.5); /* border-gray-600 con transparencia */
+            color: #d1d5db; /* text-gray-300 */
+            background-color: rgba(0, 0, 0, 0.2); /* Fondo ligeramente oscuro */
+        }
+        .project-card .pdf-btn:hover {
+            background-color: rgba(0, 0, 0, 0.4); /* Más oscuro al pasar el ratón */
+            color: white;
+        }
+
+        /* Estilo para la firma a mano alzada */
+        .signature {
+            font-family: 'Caveat', cursive;
+            font-size: 2rem; /* Tamaño de la fuente */
+            color: #9ca3af; /* text-gray-400 */
+            transform: rotate(-3deg); /* Ligera rotación */
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="gradient-bg text-gray-200">
+
+    <!-- Contenedor Principal -->
+    <div class="container mx-auto px-6 py-12 md:py-20">
+
+        <!-- Sección de Encabezado -->
+        <header class="text-center mb-16 fade-in">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
+                Mi Galería de Co-
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Creaciones</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+                Un espacio para explorar los proyectos e ideas que hemos construido juntos. Cada creación es un viaje de descubrimiento y colaboración.
+            </p>
+        </header>
+
+        <!-- Sección Sobre el Co-Creador -->
+        <section class="mb-20 fade-in" style="animation-delay: 0.2s;">
+            <div class="max-w-4xl mx-auto bg-gray-800 bg-opacity-50 rounded-xl p-8 md:p-12 border border-gray-700/50 backdrop-filter backdrop-blur-lg">
+                <div class="md:flex md:items-center md:space-x-12">
+                    <!-- Columna de la Imagen -->
+                    <div class="md:w-1/3 mb-8 md:mb-0 text-center">
+                        <!-- Imagen de perfil con ajuste de posición del objeto para evitar cortes -->
+                        <img src="https://lh3.googleusercontent.com/d/16dcSCbD80V_xjFB0wJD2S6lruG1Oa7LZ" alt="Foto de Cristian Jofré Donoso" class="rounded-full mx-auto shadow-lg w-48 h-48 object-cover border-4 border-gray-700" style="object-position: center 20%;">
+                    </div>
+                    <!-- Columna del Texto -->
+                    <div class="md:w-2/3">
+                        <h2 class="text-3xl font-bold text-white mb-2">Sobre el Co-Creador</h2>
+                        <p class="text-purple-400 mb-4 text-xl font-medium">Cristian Jofré Donoso</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Como Periodista y Máster en Marketing Digital, mi pasión es explorar las fronteras de la comunicación, la tecnología y la estrategia. Cada uno de estos proyectos representa una colaboración única donde actúo como guía y revisor, uniendo la creatividad humana con la potencia de la inteligencia artificial. Mi objetivo es transformar ideas complejas en conocimiento accesible y práctico, impulsando la innovación en un mundo en constante cambio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería de Proyectos -->
+        <main>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+
+                <!-- Tarjeta de Proyecto 1: Liderando con IA -->
+                <div class="project-card rounded-xl p-6 flex flex-col items-start fade-in" style="animation-delay: 0.4s;">
+                    <img src="PORTADA LIDERANDO CON IA.jpg" alt="Portada Liderando con IA" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h2 class="text-2xl font-bold text-white mb-2">Liderando con IA: Ética y Eficiencia en la Colaboración Humano-IA</h2>
+                    <p class="text-gray-400 mb-6 flex-grow">Explora cómo la sinergia entre humanos e inteligencia artificial redefine el trabajo colaborativo y potencia la creatividad en las organizaciones.</p>
+                    <div class="mt-auto flex items-center space-x-4">
+                        <a href="https://drive.google.com/file/d/1WhoNLxnDqu0hm79mbnxjQakbPALk_ygv/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="deep-dive-btn bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 py-2 px-5 rounded-lg transition-transform transform hover:scale-105">Deep Dive &rarr;</a>
+                        <a href="https://drive.google.com/file/d/1BSITsZNhelw_JDifPyT39vAOSdntnCsU/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="pdf-btn font-medium text-gray-300 border border-gray-600 hover:bg-gray-700 hover:text-white py-2 px-5 rounded-lg transition-colors">Ver PDF</a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Proyecto 2: Transformación Digital -->
+                <div class="project-card rounded-xl p-6 flex flex-col items-start fade-in" style="animation-delay: 0.6s;">
+                    <img src="PORTADA TRANSFORMACIÓN DIGITAL.jpg" alt="Portada Transformación Digital" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h2 class="text-2xl font-bold text-white mb-2">Transformación Digital: Claves para la Eficiencia en Startups</h2>
+                    <p class="text-gray-400 mb-6 flex-grow">Descubre las claves para la eficiencia en startups a través de la automatización, el marketing digital y la gestión del cambio organizacional.</p>
+                    <div class="mt-auto flex items-center space-x-4">
+                        <a href="https://drive.google.com/file/d/1mpAszPgQK2ZQMn7GJyj-QtSIhEeWCEMi/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="deep-dive-btn bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 py-2 px-5 rounded-lg transition-transform transform hover:scale-105">Deep Dive &rarr;</a>
+                        <a href="https://drive.google.com/file/d/15BrDfd8eAwhY2VVfVEKlpeadVD83RYRt/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="pdf-btn font-medium text-gray-300 border border-gray-600 hover:bg-gray-700 hover:text-white py-2 px-5 rounded-lg transition-colors">Ver PDF</a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Proyecto 3: Optimización de Procesos -->
+                <div class="project-card rounded-xl p-6 flex flex-col items-start fade-in" style="animation-delay: 0.8s;">
+                    <img src="PORTADA OPTIMIZACIÓN DE PROCESOS PARA LA STARTUP.jpg" alt="Portada Optimización de Procesos" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h2 class="text-2xl font-bold text-white mb-2">Optimización de Procesos: Claves para el Éxito de tu Startup</h2>
+                    <p class="text-gray-400 mb-6 flex-grow">Una guía esencial para emprendedores que buscan optimizar su desempeño y adaptarse al cambio.</p>
+                    <div class="mt-auto flex items-center space-x-4">
+                        <a href="https://drive.google.com/file/d/1ipjRwcIFKdXRxUpD01zqdq2f9jY2hqI7/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="deep-dive-btn bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700 py-2 px-5 rounded-lg transition-transform transform hover:scale-105">Deep Dive &rarr;</a>
+                        <a href="https://drive.google.com/file/d/1tN_6aAy43v2OZxYQvOcVr02yblpbTaGP/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="pdf-btn font-medium text-gray-300 border border-gray-600 hover:bg-gray-700 hover:text-white py-2 px-5 rounded-lg transition-colors">Ver PDF</a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Proyecto 4: Marketing Político -->
+                <div class="project-card rounded-xl p-6 flex flex-col items-start fade-in" style="animation-delay: 1.0s;">
+                    <img src="PORTADA MARKETING POLÍTICO.jpg" alt="Portada Marketing Político" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h2 class="text-2xl font-bold text-white mb-2">Marketing Político: Claves del Éxito en el Contexto Chileno</h2>
+                    <p class="text-gray-400 mb-6 flex-grow">Análisis de las claves del éxito, desde la segmentación de votantes y la gestión de crisis hasta la psicología en la comunicación.</p>
+                    <div class="mt-auto flex items-center space-x-4">
+                        <a href="https://drive.google.com/file/d/1GyBhQ_xbzG1K2ML-L_9NXdUYITTtfd45/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="deep-dive-btn bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 py-2 px-5 rounded-lg transition-transform transform hover:scale-105">Deep Dive &rarr;</a>
+                        <a href="https://drive.google.com/file/d/1KyZMjia7zbN4ehpPBYkgY-R5Zmy9SoW2/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="pdf-btn font-medium text-gray-300 border border-gray-600 hover:bg-gray-700 hover:text-white py-2 px-5 rounded-lg transition-colors">Ver PDF</a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Proyecto 5: Ética y Comunicación -->
+                <div class="project-card rounded-xl p-6 flex flex-col items-start fade-in" style="animation-delay: 1.2s;">
+                    <img src="PORTADA ÉTICA LENGUAJE Y COMUNICACIÓN.jpg" alt="Portada Ética, Lenguaje y Comunicación" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h2 class="text-2xl font-bold text-white mb-2">Ética, Lenguaje y Comunicación: Un Ecosistema de Ideas</h2>
+                    <p class="text-gray-400 mb-6 flex-grow">Un ecosistema de ideas sobre el lenguaje inclusivo, la responsabilidad en redes sociales y la ética en la era digital.</p>
+                    <div class="mt-auto flex items-center space-x-4">
+                        <a href="https://drive.google.com/file/d/17sIVpfLg_wqV4UjpZpcNmN_QJGcR4SBV/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="deep-dive-btn bg-gradient-to-r from-indigo-500 to-fuchsia-600 hover:from-indigo-600 hover:to-fuchsia-700 py-2 px-5 rounded-lg transition-transform transform hover:scale-105">Deep Dive &rarr;</a>
+                        <a href="https://drive.google.com/file/d/1sfkywdlwQc21-FVjig-KdCZQibXn3oHo/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="pdf-btn font-medium text-gray-300 border border-gray-600 hover:bg-gray-700 hover:text-white py-2 px-5 rounded-lg transition-colors">Ver PDF</a>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta para el Libro: Más Que Tácticas -->
+                <div class="project-card rounded-xl p-6 flex flex-col items-start fade-in" style="animation-delay: 1.4s;">
+                    <img src="PORTADA MÁS QUE TÁCTICAS.jpg" alt="Portada Más Que Tácticas" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h2 class="text-2xl font-bold text-white mb-2">Más Que Tácticas: Colaboración Efectiva</h2>
+                    <p class="text-gray-400 mb-6 flex-grow">Una guía esencial para potenciar equipos con Google Workspace, co-creado y revisado por Cristian Jofré Donoso.</p>
+                    <div class="mt-auto flex items-center space-x-4">
+                        <a href="Mas_Que_Tacticas.pdf" target="_blank" rel="noopener noreferrer" class="deep-dive-btn bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 py-2 px-5 rounded-lg transition-transform transform hover:scale-105">Deep Dive &rarr;</a>
+                        <a href="Mas_Que_Tacticas.pdf" target="_blank" rel="noopener noreferrer" class="pdf-btn font-medium text-gray-300 border border-gray-600 hover:bg-gray-700 hover:text-white py-2 px-5 rounded-lg transition-colors">Ver PDF</a>
+                        <a href="Mas-Que-Tacticas.mp3" target="_blank" rel="noopener noreferrer" class="pdf-btn font-medium text-gray-300 border border-gray-600 hover:bg-gray-700 hover:text-white py-2 px-5 rounded-lg transition-colors">Escuchar Audio (MP3)</a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta para Nuevos Contenidos (Placeholder) -->
+                <div class="project-card rounded-xl p-6 flex flex-col items-center justify-center text-center border-2 border-dashed border-gray-600 fade-in" style="animation-delay: 1.6s;">
+                    <div class="text-center text-gray-500">
+                        <span class="text-5xl block mb-2">+</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Nuevas Co-Creaciones</h3>
+                        <p class="text-gray-400 text-sm">Próximamente habrá nuevos proyectos aquí. Para agregar uno nuevo, solo tienes que pedirlo.</p>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Sección de Pie de Página -->
+        <footer class="text-center mt-20 fade-in" style="animation-delay: 1.8s;">
+            <p class="signature">Cristian Jofré Donoso</p>
+            <p class="text-gray-500 text-sm">
+                Creado con la colaboración de IA. &copy; 2025.
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
